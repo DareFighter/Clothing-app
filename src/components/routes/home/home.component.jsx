@@ -29,12 +29,12 @@ const Home = () => {
       imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
     },
   ];
-  return;
-
-  <>
-    <Outlet />
-    <Directory categories={categories} />;
-  </>;
+  return (
+    <>
+      <Outlet />
+      <Directory categories={categories} />;
+    </>
+  );
 };
 
 export default Home;
