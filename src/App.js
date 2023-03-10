@@ -4,10 +4,7 @@ import { Routes, Route, Outlet } from "react-router-dom";
 import { Fragment } from "react";
 import Navigation from "./components/routes/navigation/navigation.component";
 import Authentication from "./components/routes/Authentication/authentication.component";
-
-const Shop = () => {
-  return <h1>I am the shop page</h1>;
-};
+import Shop from "./components/routes/shop/shop.component";
 
 const App = () => {
   return (
