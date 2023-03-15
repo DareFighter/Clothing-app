@@ -1,16 +1,20 @@
-import SHOP_DATA from "../../../shop-data.json";
 import { useContext } from "react";
-import { ProductsContext } from "../../../context/products.context";
-import ProductsCard from "../../product-card/product-card.component";
+
+import CategoryPreview from "../../category-preview/category-preview.component";
+
+import { CategoriesContext } from "../../../context/categories.context";
+
 import "./shop.styles.scss";
+
 const Shop = () => {
-  const { products } = useContext(ProductsContext);
+  const { categoriesMap } = useContext(CategoriesContext);
 
   return (
-    <div className="products-container">
-      {SHOP_DATA.map((product) => (
-        <ProductsCard key={product.id} product={product} />
-      ))}
+    <div className="shop-container">
+      {Object.keys(categoriesMap).map((key) => {
+        const products = categoriesMap[key];
+        return <CategoryPreview key={key} title={key} products={products} />;
+      })}
     </div>
   );
 };
